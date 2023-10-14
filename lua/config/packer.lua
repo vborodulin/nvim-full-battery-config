@@ -35,7 +35,6 @@ return require('packer').startup(function(use)
   }
   use {
 	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
 	  requires = {
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
@@ -43,26 +42,27 @@ return require('packer').startup(function(use)
 		  {'williamboman/mason-lspconfig.nvim'},
 
 		  -- Autocompletion
+		  {'hrsh7th/cmp-nvim-lsp'},
+		  {"onsails/lspkind-nvim"},
 		  {'hrsh7th/nvim-cmp'},
 		  {'hrsh7th/cmp-buffer'},
 		  {'hrsh7th/cmp-path'},
+		  {'hrsh7th/cmp-omni'},
+		  {'hrsh7th/cmp-emoji'},
 		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
-
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+  use("norcalli/nvim-colorizer.lua")
 
-  -- File tree, lines, panels and tabs
+  -- UI elements
   use {'nvim-lualine/lualine.nvim'}
   use {'nvim-tree/nvim-tree.lua'}
+  use("rcarriga/nvim-notify")
 
-  -- Comments and improve working with text
+  -- Improve working with text
   use("tpope/vim-commentary")
   use("tpope/vim-surround")
+  use("Raimondi/delimitMate")
 
   -- Working with DB
   use("tpope/vim-dadbod")
@@ -75,4 +75,7 @@ return require('packer').startup(function(use)
       {"nvim-tree/nvim-web-devicons"},
     }
   }
+
+  -- Documentation
+  use("folke/which-key.nvim")
 end)
