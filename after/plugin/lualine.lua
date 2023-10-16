@@ -1,11 +1,10 @@
 require('lualine').setup {
   options = {
-    icons_enabled = true,
+    icons_enabled = false,
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
       "packer",
-      "NvimTree",
     },
     ignore_focus = {},
     always_divide_middle = true,

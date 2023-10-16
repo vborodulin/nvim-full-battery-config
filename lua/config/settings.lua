@@ -1,12 +1,5 @@
---
--- ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
--- ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
--- ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
--- ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
--- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
--- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
---
--- Neovim Lua Config File by Slava Borodulin
+-- Neovim Lua Config File by Slava Borodulin (https://github.com/vborodulin)
+
 -- SETTINGS
 
 -- UTF-8 encoding
@@ -61,24 +54,10 @@ vim.opt.smartcase = true
 vim.opt.showmatch = true
 
 -- Showing partial command on last line
-vim.opt.showcmd = true
+vim.opt.showcmd = false
 
 -- Showing mode on last line
 vim.opt.showmode = false
-
--- Auto completion menu after pressing TAB
-vim.opt.wildmenu = true
-
--- Bash-like completion
-vim.opt.wildmode = "list:full"
-
--- Ignoring files with certain extensions
-vim.opt.wildignore = "*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx"
-
--- Command completion in popup menu
-vim.opt.wildoptions = "pum"
---opt.pumblend = 7   -- Make popup translucent
-vim.opt.pumheight = 20 -- Max amount of items
 
 -- Mouse support
 vim.opt.mouse = "a"
@@ -129,7 +108,7 @@ vim.opt.colorcolumn = "100"
 vim.opt.scrolloff = 10;
 
 -- Command history
-vim.opt.history = 500
+vim.opt.history = 1000
 
 vim.opt.autowrite = true
 
