@@ -1,3 +1,14 @@
+--
+-- ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+-- ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+-- ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+-- ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+-- ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+-- ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
+--
+-- Neovim Lua Config File by Slava Borodulin
+-- MAPPINGS
+
 local uv = vim.loop
 
 -- Set space as leader key
@@ -20,12 +31,10 @@ vim.keymap.set("n", "<space>o", "printf('m`%so<ESC>``', v:count1)", {
   expr = true,
   desc = "insert line below",
 })
-
 vim.keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", {
   expr = true,
   desc = "insert line above",
 })
-
 
 -- move the cursor based on physical lines, not the actual lines.
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })

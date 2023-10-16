@@ -1,9 +1,13 @@
+local builtin = require('telescope.builtin')
+
 local function my_on_attach(bufnr)
   local api = require "nvim-tree.api"
 
+  api.config.mappings.default_on_attach(bufnr)
+
   local function opts(desc)
     return {
-      desc = "nvim-tree:" ..desc,
+      desc = "Nvim-tree:" ..desc,
       buffer = bufnr,
       noremap = true,
       silent = true,
@@ -11,14 +15,36 @@ local function my_on_attach(bufnr)
     }
   end
 
-  api.config.mappings.default_on_attach(bufnr)
-
-  local function open_in_finder()
+  local function get_dir_under_cursor()
     local node = api.tree.get_node_under_cursor()
-    api.tree.system_open()
+    local is_dir = vim.fn.isdirectory(node.absolute_path)
+
+    if is_dir then
+      return node.absolute_path
+    else
+      local last_slash_index = string.find(node.absolute_path, "/[^/]*$")
+      return string.sub(node.absolute_path, 0, last_slash_index)
+    end
   end
 
-  vim.keymap.set("n", "op", open_in_finder, opts("Open in finder"))
+  local function find_files_in_dir()
+    builtin.find_files({
+      cwd = get_dir_under_cursor()
+    })
+  end
+
+  local function grep_string_in_dir()
+    local dir_path = get_dir_under_cursor()
+    local title = dir_path .. " Grep > "
+
+    builtin.grep_string({
+      search = vim.fn.input(title),
+      cwd = get_dir_under_cursor()
+    })
+  end
+
+  vim.keymap.set("n", "pf", find_files_in_dir, opts("Find files in dir"))
+  vim.keymap.set("n", "ps", grep_string_in_dir, opts("Grep files in dir"))
 end
 
 require("nvim-tree").setup({

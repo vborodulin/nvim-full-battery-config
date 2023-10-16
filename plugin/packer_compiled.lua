@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/boroda/.local/share/nvim/site/pack/packer/start/delimitMate",
     url = "https://github.com/Raimondi/delimitMate"
   },
+  ["everforest-nvim"] = {
+    loaded = true,
+    path = "/Users/boroda/.local/share/nvim/site/pack/packer/start/everforest-nvim",
+    url = "https://github.com/neanias/everforest-nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/boroda/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",

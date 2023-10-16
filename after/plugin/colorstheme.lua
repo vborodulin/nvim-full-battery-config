@@ -1,21 +1,7 @@
-require("catppuccin").setup({
-  flavour = "mocha",
-  transparent_background = true,
-  term_colors = true,
-  custom_highlights = function(colors)
-    return {
-      Comment = {
-        fg = colors.overlay2,
-        style = {
-          "italic"
-        }
-      },
-      LineNr = {
-        fg = colors.overlay2
-      }
-    }
-  end
+require("everforest").setup({
+  background = "medium",
+  transparent_background_level = 1
 })
 
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme everforest")
 

@@ -1,3 +1,6 @@
+-- Neovim Lua Config File by Slava Borodulin
+-- PLUGINS
+
 vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
@@ -6,6 +9,7 @@ return require('packer').startup(function(use)
   -- Themes
   use "lukas-reineke/indent-blankline.nvim"
   use { "catppuccin/nvim", as = "catppuccin" }
+  use("neanias/everforest-nvim")
   use("mhinz/vim-startify")
 
   -- Navigation

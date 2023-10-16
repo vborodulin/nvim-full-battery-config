@@ -4,9 +4,7 @@ local exclude_ft = { "help", "git", "markdown", "snippets", "text", "gitconfig" 
 
 require("ibl").setup {
   indent = {
-    -- -- U+2502 may also be a good choice, it will be on the middle of cursor. hame
-    -- -- U+250A is also a good choice
-    char = "▏",
+    char = "┊",
   },
   scope = {
     enabled = false,
