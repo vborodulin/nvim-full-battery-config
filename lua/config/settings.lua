@@ -6,12 +6,12 @@
 vim.opt.encoding = "UTF-8"
 
 -- Use English as main language
-vim.cmd [[language en_US.UTF-8]]
+vim.cmd([[language en_US.UTF-8]])
 
 vim.g.logging_level = "info"
 
 -- enable highlighting for lua here doc inside vim script
-vim.g.vimsyn_embed = 'l'
+vim.g.vimsyn_embed = "l"
 
 -- Disable netrw (native VIM file explorer)
 vim.g.loaded_netrw = 1
@@ -22,13 +22,13 @@ vim.opt.termguicolors = true
 
 -- Time in milliseconds to wait for a mapped sequence to complete,
 -- see https://unix.stackexchange.com/q/36882/221410 for more info
-vim.opt.updatetime = 500;
+vim.opt.updatetime = 500
 
 -- For CursorHold events
-vim.opt.timeoutlen = 500;
+vim.opt.timeoutlen = 500
 
--- Enabling clipboard
-vim.opt.clipboard = "unnamedplus"
+-- Enabling clipboard, use system clipboard as default register
+vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.guicursor = ""
 
@@ -99,13 +99,13 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 -- Horizontal cursor line
-vim.opt.cursorline = true;
+vim.opt.cursorline = true
 
 -- Vertical line to show max line length
 vim.opt.colorcolumn = "100"
 
 --  Do not let cursor scroll below or above N number of lines when scrolling
-vim.opt.scrolloff = 10;
+vim.opt.scrolloff = 10
 
 -- Command history
 vim.opt.history = 1000

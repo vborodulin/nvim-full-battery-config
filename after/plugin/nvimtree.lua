@@ -1,13 +1,13 @@
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
 
 local function my_on_attach(bufnr)
-  local api = require "nvim-tree.api"
+  local api = require("nvim-tree.api")
 
   api.config.mappings.default_on_attach(bufnr)
 
   local function opts(desc)
     return {
-      desc = "Nvim-tree:" ..desc,
+      desc = "Nvim-tree:" .. desc,
       buffer = bufnr,
       noremap = true,
       silent = true,
@@ -29,7 +29,7 @@ local function my_on_attach(bufnr)
 
   local function find_files_in_dir()
     builtin.find_files({
-      cwd = get_dir_under_cursor()
+      cwd = get_dir_under_cursor(),
     })
   end
 
@@ -39,7 +39,7 @@ local function my_on_attach(bufnr)
 
     builtin.grep_string({
       search = vim.fn.input(title),
-      cwd = get_dir_under_cursor()
+      cwd = get_dir_under_cursor(),
     })
   end
 
@@ -50,13 +50,27 @@ end
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
-    adaptive_size = true
+    adaptive_size = true,
   },
   renderer = {
     group_empty = true,
+    indent_markers = {
+      enable = true,
+    },
+  },
+  -- disable window_picker for
+  -- explorer to work well with
+  -- window splits
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false,
+      },
+    },
   },
   filters = {
-    dotfiles = false
+    dotfiles = false,
+    custom = { ".DS_Store" },
   },
   sync_root_with_cwd = true,
   hijack_cursor = true,

@@ -2,7 +2,7 @@ local api = vim.api
 
 local exclude_ft = { "help", "git", "markdown", "snippets", "text", "gitconfig" }
 
-require("ibl").setup {
+require("ibl").setup({
   indent = {
     char = "┊",
   },
@@ -13,7 +13,7 @@ require("ibl").setup {
     filetypes = exclude_ft,
     buftypes = { "terminal" },
   },
-}
+})
 
 local gid = api.nvim_create_augroup("indent_blankline", { clear = true })
 api.nvim_create_autocmd("InsertEnter", {
@@ -31,4 +31,3 @@ api.nvim_create_autocmd("InsertLeave", {
     end
   end,
 })
-
