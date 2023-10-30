@@ -20,6 +20,7 @@ mason_lspconfig.setup({
     "tsserver",
     "html",
     "cssls",
+    "cssmodules_ls",
     "jsonls",
   },
   -- auto-install configured servers (with lspconfig)

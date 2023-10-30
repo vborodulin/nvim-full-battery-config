@@ -11,6 +11,7 @@ return require("packer").startup(function(use)
 
   use("neanias/everforest-nvim")
   use("mhinz/vim-startify")
+  use("lukas-reineke/indent-blankline.nvim")
 
   -- Navigation
   use({
@@ -41,15 +42,23 @@ return require("packer").startup(function(use)
       ts_update()
     end,
   })
-  use("mfussenegger/nvim-lint")
+  use("mfussenegger/nvim-lint") -- FIX not working
   use("norcalli/nvim-colorizer.lua")
+
+  use("neovim/nvim-lspconfig")
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-nvim-lsp-signature-help")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+  use("rafamadriz/friendly-snippets") -- useful snippets
+  use("onsails/lspkind.nvim") -- vs-code like pictograms
+  use("antosha417/nvim-lsp-file-operations")
   use({
-    "hrsh7th/nvim-cmp",
-    requires = {
-      { "hrsh7th/cmp-buffer" }, -- source for text in buffer
-      { "hrsh7th/cmp-path" }, -- source for file system paths
-      { "onsails/lspkind.nvim" }, -- vs-code like pictograms
-    },
+    "L3MON4D3/LuaSnip",
+    tag = "v2.*",
+    run = "make install_jsregexp",
   })
   use({
     "williamboman/mason.nvim",
@@ -62,13 +71,6 @@ return require("packer").startup(function(use)
     "nvimtools/none-ls.nvim",
     requires = {
       { "jay-babu/mason-null-ls.nvim" },
-    },
-  })
-  use({
-    "neovim/nvim-lspconfig",
-    requires = {
-      { "hrsh7th/cmp-nvim-lsp" },
-      { "antosha417/nvim-lsp-file-operations" },
     },
   })
 

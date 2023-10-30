@@ -1,12 +1,19 @@
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+local luasnip = require("luasnip")
+
+require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
   completion = {
     completeopt = "menu,menuone,preview,noselect",
   },
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
   mapping = cmp.mapping.preset.insert({
-
     ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
     ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -19,6 +26,8 @@ cmp.setup({
   -- sources for autocompletion
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
+    { name = "nvim_lsp_signature_help" },
+    { name = "luasnip" }, -- snippet
     { name = "buffer" }, -- text within current buffer
     { name = "path" }, -- file system paths
   }),
