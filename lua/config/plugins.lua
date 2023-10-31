@@ -8,7 +8,6 @@ return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- Themes
-
   use("neanias/everforest-nvim")
   use("mhinz/vim-startify")
   use("lukas-reineke/indent-blankline.nvim")
@@ -20,7 +19,6 @@ return require("packer").startup(function(use)
     requires = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-lua/popup.nvim" },
-      { "nvim-telescope/telescope-media-files.nvim" },
     },
   })
   use("christoomey/vim-tmux-navigator")
@@ -42,7 +40,7 @@ return require("packer").startup(function(use)
       ts_update()
     end,
   })
-  use("mfussenegger/nvim-lint") -- FIX not working
+  use("mfussenegger/nvim-lint") -- FIXME
   use("norcalli/nvim-colorizer.lua")
 
   use("neovim/nvim-lspconfig")
@@ -51,15 +49,16 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-nvim-lsp-signature-help")
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")
-  use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-  use("rafamadriz/friendly-snippets") -- useful snippets
-  use("onsails/lspkind.nvim") -- vs-code like pictograms
+  use("saadparwaiz1/cmp_luasnip")
+  use("rafamadriz/friendly-snippets")
+  use("onsails/lspkind.nvim")
   use("antosha417/nvim-lsp-file-operations")
   use({
     "L3MON4D3/LuaSnip",
     tag = "v2.*",
     run = "make install_jsregexp",
   })
+
   use({
     "williamboman/mason.nvim",
     requires = {
@@ -67,6 +66,7 @@ return require("packer").startup(function(use)
       { "WhoIsSethDaniel/mason-tool-installer.nvim" },
     },
   })
+
   use({
     "nvimtools/none-ls.nvim",
     requires = {
@@ -81,12 +81,7 @@ return require("packer").startup(function(use)
 
   -- Improve working with text
   use("tpope/vim-surround")
-  use({
-    "windwp/nvim-autopairs",
-    requires = {
-      { "hrsh7th/nvim-cmp" },
-    },
-  })
+  use("windwp/nvim-autopairs")
   use({
     "numToStr/Comment.nvim",
     requires = {
