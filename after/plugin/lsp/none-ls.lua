@@ -25,7 +25,7 @@ null_ls.setup({
   -- setup formatters & linters
   sources = {
     formatting.prettier.with({
-      filetypes = { "html", "json", "yaml", "markdown", "json", "typescript" },
+      filetypes = { "html", "json", "yaml", "markdown", "json", "typescript", "scss" },
     }),
     formatting.stylua,
     diagnostics.eslint_d,
