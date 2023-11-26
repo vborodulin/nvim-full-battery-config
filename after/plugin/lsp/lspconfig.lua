@@ -1,8 +1,6 @@
 -- import lspconfig plugin
 local lspconfig = require("lspconfig")
 
-require("lsp-file-operations").setup()
-
 -- import cmp-nvim-lsp plugin
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -13,8 +11,8 @@ local on_attach = function(client, bufnr)
   opts.buffer = bufnr
 
   -- set keybinds
-  opts.desc = "Show LSP references"
-  keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+  -- opts.desc = "Show LSP references"
+  -- keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
   opts.desc = "Go to declaration"
   keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
